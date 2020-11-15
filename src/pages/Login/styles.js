@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const LoginPage = styled.section`
+const LoginStyle = styled.section`
   background: #000;
+  color: #ffffff;
 `;
 
-export default LoginPage;
+export default LoginStyle;

@@ -1,11 +1,11 @@
 import React, { memo } from "react";
-import LoginPage from "./styles";
+import LoginStyle from "./styles";
 
 const Login = () => {
   return (
-    <LoginPage>
-      <h1>Login</h1>
-    </LoginPage>
+    <LoginStyle>
+      <h1>Verstans</h1>
+    </LoginStyle>
   );
 };
 
