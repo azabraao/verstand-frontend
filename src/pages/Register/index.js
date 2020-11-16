@@ -1,24 +1,26 @@
 import React, { memo, useState } from "react";
 import Input from "../../components/Form/Input";
 import Button from "../../components/Button";
-import LoginStyle from "./styles";
-import { Link } from "react-router-dom";
 import FormFeedback from "../../components/FormFeedback";
+import RegisterStyle from "./styles";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const [error, setError] = useState();
 
   return (
-    <LoginStyle>
+    <RegisterStyle>
       <div className="container">
         <h1>Verstand</h1>
-        <h2>Login</h2>
+        <h2>Create account</h2>
 
+        <Input type="name" name="name" id="name" label="Name" />
         <Input type="email" name="email" id="email" label="E-mail address" />
         <Input type="password" name="senha" id="senha" label="Senha" />
         <FormFeedback feedback={error} />
 
-        <Button>Sign in</Button>
+        <Button>Create account</Button>
+
         <footer>
           <Link to="/register">
             <div>Not a member?</div>
@@ -26,8 +28,8 @@ const Login = () => {
           </Link>
         </footer>
       </div>
-    </LoginStyle>
+    </RegisterStyle>
   );
 };
 
-export default memo(Login);
+export default memo(Register);
