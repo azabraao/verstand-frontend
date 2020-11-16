@@ -126,6 +126,8 @@ const GlobalStyles = createGlobalStyle`
 
     .container {
         padding: 0 16px;
+        max-width: 768px;
+        margin: 0 auto
     }
     
 `;
