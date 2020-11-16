@@ -19,7 +19,8 @@ const InputStyle = styled.div`
     padding: 16px;
     border: none;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 27px;
+    padding-bottom: 8px;
   }
 
   article {
