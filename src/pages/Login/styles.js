@@ -21,6 +21,29 @@ const LoginStyle = styled.section`
     color: #ffffff;
     margin-bottom: 40px;
   }
+
+  footer {
+    text-align: center;
+    padding-top: 80px;
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: fit-content;
+      margin: 0 auto;
+      
+      :hover {
+        text-decoration: underline;
+      }
+
+      div {
+        line-height: 20px;
+      }
+    }
+  }
 `;
 
 export default LoginStyle;

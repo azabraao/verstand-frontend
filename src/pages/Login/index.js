@@ -2,6 +2,8 @@ import React, { memo } from "react";
 import Input from "../../components/Form/Input";
 import Button from "../../components/Button";
 import LoginStyle from "./styles";
+import {Link} from 'react-router-dom'
+
 
 const Login = () => {
   return (
@@ -15,6 +17,12 @@ const Login = () => {
         <Button>
           Sign in
         </Button>
+        <footer>
+          <Link to="/register">
+            <div>Not a member?</div>
+            <div>Sign up now</div>
+          </Link>
+        </footer>
       </div>
     </LoginStyle>
   );
