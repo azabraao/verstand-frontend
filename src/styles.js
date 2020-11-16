@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import Netron from "./assets/fonts/Netron.ttf";
-import Gotham from "./assets/fonts/Gotham-Font/GothamMedium.ttf";
+import Gotham from "./assets/fonts/Gotham-Font/GothamMedium_1.ttf";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -15,15 +15,88 @@ const GlobalStyles = createGlobalStyle`
         src: url(${Gotham})
     }
 
-    * {
-        box-sizing: inherit;
+    html,
+    body,
+    p,
+    ol,
+    ul,
+    li,
+    dl,
+    dt,
+    dd,
+    blockquote,
+    figure,
+    fieldset,
+    legend,
+    textarea,
+    pre,
+    iframe,
+    hr,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        padding: 0
     }
 
-    html, 
-    body {
-        box-sizing: border-box;
-        margin: 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 100%;
+        font-weight: normal
+    }
+
+    ul {
+        list-style: none
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        margin: 0
+    }
+
+    html {
+        box-sizing: border-box
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit
+    }
+
+    img,
+    video {
+        height: auto;
+        max-width: 100%
+    }
+
+    iframe {
+        border: 0
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+
+    td,
+    th {
         padding: 0;
+        text-align: left
+    }
+    
+    html,
+    body {
+        font-size: 16px;
     }
 
     html, 
@@ -37,7 +110,8 @@ const GlobalStyles = createGlobalStyle`
     article,
     ul,
     li,
-    a {
+    a,
+    input {
         font-family: Gotham
     }
 
