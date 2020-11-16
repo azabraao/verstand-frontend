@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import Netron from "./assets/fonts/Netron.ttf";
-import Gotham from "./assets/fonts/Gotham-Font/GothamMedium_1.ttf";
+import Gotham from "./assets/fonts/Gotham-Font/GothamLight.ttf";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -122,6 +122,10 @@ const GlobalStyles = createGlobalStyle`
     h5,
     h6 {
         font-family: Netron
+    }
+
+    .container {
+        padding: 0 16px;
     }
     
 `;
