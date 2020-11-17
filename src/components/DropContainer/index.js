@@ -41,8 +41,19 @@ const DropContainer = () => {
   const onFileDrop = (e) => {
     e.preventDefault();
     setIsDragging(false);
-    const file = e.dataTransfer.files[0];
+    const files = e.dataTransfer.files;
+    const file = files[0];
 
+    if(files.length > 1) {
+      setHasError(true)
+      setErrorMessage("Please, drop only one file");
+      return
+    }
+
+    handleFile(file);
+  };
+
+  const handleFile = (file) => {
     if (!fileIsJSON(file)) {
       setHasError(true);
       setErrorMessage("Please, upload a JSON file");
@@ -57,6 +68,10 @@ const DropContainer = () => {
     hiddenInputRef.current.click();
   };
 
+  const onFileInputChange = () => {
+    handleFile(hiddenInputRef.current.files[0]);
+  };
+
   return (
     <DropContainerStyle
       onDragOver={dragOver}
@@ -67,7 +82,12 @@ const DropContainer = () => {
       className={classNames({ isDragging, hasError, isUploading })}
     >
       <div className="DragContainer__inside">
-        <input ref={hiddenInputRef} hidden type="file" />
+        <input
+          onChange={onFileInputChange}
+          hidden
+          ref={hiddenInputRef}
+          type="file"
+        />
         {!isUploading && <img src={iconJson} alt="icon" />}
         {isUploading ? (
           <article className="DragContainer__fileName">
