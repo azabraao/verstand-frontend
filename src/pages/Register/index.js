@@ -1,12 +1,19 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useEffect } from "react";
 import Input from "../../components/Form/Input";
 import Button from "../../components/Button";
 import FormFeedback from "../../components/FormFeedback";
 import RegisterStyle from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Register = () => {
   const [error] = useState();
+  const history = useHistory();
+
+  useEffect(() => {
+// setTimeout(() => {
+//   history.push("/upload")
+// },5000)
+  },[]) 
 
   return (
     <RegisterStyle>
