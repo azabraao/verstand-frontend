@@ -18,7 +18,8 @@ const ButtonStyle = styled.button`
   border: none;
   transition: all 0.5s;
   cursor: pointer;
-
+  width: min-content;
+  
   :hover {
     transform: scale(0.97);
   }

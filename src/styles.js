@@ -4,6 +4,11 @@ import Netron from "./assets/fonts/Netron.ttf";
 import Gotham from "./assets/fonts/Gotham-Font/GothamLight.ttf";
 
 const GlobalStyles = createGlobalStyle`
+    .body-no-scroll {
+        overflow: hidden;
+        position: relative;
+        height: 100%; 
+    }
 
     @font-face {
         font-family: Netron;
