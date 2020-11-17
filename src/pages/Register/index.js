@@ -6,7 +6,7 @@ import RegisterStyle from "./styles";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [error, setError] = useState();
+  const [error] = useState();
 
   return (
     <RegisterStyle>
@@ -14,17 +14,29 @@ const Register = () => {
         <h1>Verstand</h1>
         <h2>Create account</h2>
 
-        <Input type="name" name="name" id="name" label="Name" />
-        <Input type="email" name="email" id="email" label="E-mail address" />
-        <Input type="password" name="senha" id="senha" label="Senha" />
+        <Input tabIndex="0" type="name" name="name" id="name" label="Name" />
+        <Input
+          tabIndex="0"
+          type="email"
+          name="email"
+          id="email"
+          label="E-mail address"
+        />
+        <Input
+          tabIndex="0"
+          type="password"
+          name="senha"
+          id="senha"
+          label="Senha"
+        />
         <FormFeedback feedback={error} />
 
-        <Button>Create account</Button>
+        <Button tabIndex="0">Create account</Button>
 
         <footer>
-          <Link to="/register">
-            <div>Not a member?</div>
-            <div>Sign up now</div>
+          <Link to="/login">
+            <div>Already member?</div>
+            <div>Sign in</div>
           </Link>
         </footer>
       </div>

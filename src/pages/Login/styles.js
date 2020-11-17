@@ -22,6 +22,11 @@ const LoginStyle = styled.section`
     margin-bottom: 40px;
   }
 
+  button {
+    margin: 0 auto;
+    display: block;
+  }
+
   footer {
     text-align: center;
     padding-top: 80px;
@@ -34,7 +39,7 @@ const LoginStyle = styled.section`
       flex-direction: column;
       width: fit-content;
       margin: 0 auto;
-      
+
       :hover {
         text-decoration: underline;
       }

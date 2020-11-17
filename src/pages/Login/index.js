@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import FormFeedback from "../../components/FormFeedback";
 
 const Login = () => {
-  const [error, setError] = useState();
+  const [error] = useState();
 
   return (
     <LoginStyle>
@@ -14,11 +14,23 @@ const Login = () => {
         <h1>Verstand</h1>
         <h2>Login</h2>
 
-        <Input type="email" name="email" id="email" label="E-mail address" />
-        <Input type="password" name="senha" id="senha" label="Senha" />
+        <Input
+          tabIndex="0"
+          type="email"
+          name="email"
+          id="email"
+          label="E-mail address"
+        />
+        <Input
+          tabIndex="0"
+          type="password"
+          name="senha"
+          id="senha"
+          label="Senha"
+        />
         <FormFeedback feedback={error} />
 
-        <Button>Sign in</Button>
+        <Button tabIndex="0">Sign in</Button>
         <footer>
           <Link to="/register">
             <div>Not a member?</div>

@@ -97,6 +97,7 @@ const GlobalStyles = createGlobalStyle`
     html,
     body {
         font-size: 16px;
+        line-height: 100%
     }
 
     html, 
@@ -112,7 +113,7 @@ const GlobalStyles = createGlobalStyle`
     li,
     a,
     input {
-        font-family: Gotham
+        font-family: Gotham;
     }
 
     h1,
