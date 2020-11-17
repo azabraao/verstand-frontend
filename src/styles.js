@@ -97,7 +97,7 @@ const GlobalStyles = createGlobalStyle`
     html,
     body {
         font-size: 16px;
-        line-height: 100%
+        line-height: 1.5;
     }
 
     html, 
