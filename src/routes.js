@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Upload from "./pages/Upload";
+import ProtectedRoute from "./protected.route";
 
 const Routes = () => {
   return (
@@ -14,9 +15,9 @@ const Routes = () => {
           <Route path="/" exact component={Login} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
-          <Route path="/upload" exact component={Upload} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/download" exact component={Download} />
+          <ProtectedRoute path="/upload" exact component={Upload} />
+          <ProtectedRoute path="/profile" exact component={Profile} />
+          <ProtectedRoute path="/download" exact component={Download} />
         </Switch>
       </BrowserRouter>
     </>
