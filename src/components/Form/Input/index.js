@@ -1,16 +1,16 @@
 import React from "react";
 import InputStyle from "./styles";
 
-const Input = ({ label, type, error, ...props }) => {
+const Input = React.forwardRef(({ label, type, error, ...props }, ref) => {
   return (
     <InputStyle>
       <label>{label}</label>
-      <input type={type} {...props} />
+      <input ref={ref} type={type} {...props} />
       <article>
         <p>{error}</p>
       </article>
     </InputStyle>
   );
-};
+});
 
 export default Input;
