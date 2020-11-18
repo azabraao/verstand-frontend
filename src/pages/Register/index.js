@@ -3,11 +3,11 @@ import Input from "../../components/Form/Input";
 import Button from "../../components/Button";
 import FormFeedback from "../../components/FormFeedback";
 import RegisterStyle from "./styles";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [error] = useState();
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
 // setTimeout(() => {
