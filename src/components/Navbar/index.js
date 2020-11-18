@@ -32,10 +32,6 @@ const Navbar = () => {
     return openedMenuCleanup;
   }, [isActive]);
 
-  useEffect(() => {
-    isActive && (document.body.style.overflow = "hidden");
-  }, [isActive]);
-
   return (
     <NavbarStyle>
       <div className={classNames("Navbar__menu", { isActive })}>

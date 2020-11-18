@@ -5,49 +5,80 @@ const ProfileStyle = styled.section`
   min-height: 100vh;
   color: #ffffff;
   padding-top: 48px;
+  padding-bottom: 120px;
+
+  &.singer {
+    background: linear-gradient(180deg, #fddb92 0%, #d1fdff 100%),
+      linear-gradient(0deg, #4eedf9, #4eedf9);
+    color: #000;
+  }
+
+  &.fighter {
+    background: linear-gradient(180deg, #667eea 0%, #5c4ba2 100%),
+      linear-gradient(0deg, #4eedf9, #4eedf9);
+    color: #fff;
+  }
+
+  &.entrepreneur {
+    background: linear-gradient(180deg, #84fab0 0%, #8fd3f4 100%),
+      linear-gradient(0deg, #4eedf9, #4eedf9);
+    color: #000;
+  }
 
   h1 {
-    font-size: 36px;
-    line-height: 45px;
+    font-size: 24px;
+    line-height: 30px;
     text-align: center;
-    color: #ffffff;
-    padding-bottom: 56px;
+    padding-bottom: 24px;
   }
 
-  h2 {
-    font-size: 32px;
-    line-height: 31px;
+  .Profile__image {
     text-align: center;
-    color: #ffffff;
-    margin-bottom: 40px;
-  }
-
-  button {
-    margin: 0 auto;
+    margin-bottom: 24px;
+    margin: 0 auto 24px auto;
     display: block;
   }
 
-  footer {
+  .Profile__name {
     text-align: center;
-    padding-top: 80px;
+    font-family: Gotham;
+    margin-bottom: 24px;
+    font-family: Gotham;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .Profile__highlights {
+    font-family: Gotham;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0em;
+    margin-bottom: 40px;
+  }
 
-    a {
-      color: #ffffff;
-      text-decoration: none;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      width: fit-content;
-      margin: 0 auto;
-
-      :hover {
-        text-decoration: underline;
-      }
-
-      div {
-        line-height: 20px;
-      }
+  .Profile__overview {
+    margin-bottom: 40px;
+    h3 {
+      font-family: Gotham;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
     }
+    p {
+      font-family: Gotham;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+    }
+  }
+
+  .Profile__btn {
+    margin: 0 auto;
+    display: block;
   }
 `;
 
