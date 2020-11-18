@@ -25,7 +25,8 @@ const Register = () => {
   }, [name, email, password]);
 
   useEffect(() => {
-    (nameError || passwordError || emailError) && setIsLoading(false);
+    (nameError || passwordError || emailError || formError) &&
+      setIsLoading(false);
   }, [emailError, passwordError, nameError]);
 
   const doFormValidations = (e) => {
@@ -62,7 +63,7 @@ const Register = () => {
 
   const submitForm = async () => {
     try {
-      let { data } = await authService.signup({ name, email, password });
+      const { data } = await authService.signup({ name, email, password });
 
       if (!data) throw new Error("Something went wrong");
       authService.storeUser(data);
@@ -70,7 +71,7 @@ const Register = () => {
       history.push("/upload");
     } catch (err) {
       setFormError(
-        "Unfortunately something is wrong with us. Try again later."
+        "Unfortunately something is wrong with us. Please, try again."
       );
     }
   };
