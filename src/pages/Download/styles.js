@@ -15,6 +15,12 @@ const ProfileStyle = styled.section`
   -moz-animation: MovingBackground 6s ease infinite;
   animation: MovingBackground 6s ease infinite;
 
+  a {
+    color: #ffffff;
+    display: block;
+    margin-top: 24px;
+  }
+
   @-webkit-keyframes MovingBackground {
     0% {
       background-position: 0% 50%;
