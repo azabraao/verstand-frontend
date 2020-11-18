@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Download from "./pages/Download";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
@@ -15,6 +16,7 @@ const Routes = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/upload" exact component={Upload} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/download" exact component={Download} />
         </Switch>
       </BrowserRouter>
     </>

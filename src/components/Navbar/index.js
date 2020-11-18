@@ -41,7 +41,11 @@ const Navbar = () => {
               Profile
             </NavLink>
           </li>
-          <li>Report</li>
+          <li>
+            <NavLink to="/download" activeClassName="active">
+              Download
+            </NavLink>            
+          </li>
           <Button theme="danger">Exit</Button>
         </ul>
       </div>

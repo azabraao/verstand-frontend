@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <ProfileStyle className="entrepreneur">
+      <ProfileStyle className="singer">
         <div className="container">
           <h1>Singer</h1>
           <img className="Profile__image" src={imgSinger} alt="Foto da pessoa" />
