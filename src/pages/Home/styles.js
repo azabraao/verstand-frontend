@@ -21,14 +21,25 @@ const HomeStyle = styled.section`
     margin-bottom: 32px;
   }
 
+  article p:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  
   p {
     font-size: 28px;
     text-align: center;
     line-height: 1.7;
-    margin-bottom: 48px;
   }
 
-  article {
+  hr {
+    margin: 48px 0;
+  }
+
+  .provocation {
+    animation-name: fade;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;margin-bottom:24px
   }
 
   .Home__buttons {
@@ -51,6 +62,15 @@ const HomeStyle = styled.section`
   .Home__cta {
     margin-top: 80px;
     justify-content: center;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
