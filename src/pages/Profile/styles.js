@@ -51,6 +51,7 @@ const ProfileStyle = styled.section`
     letter-spacing: 0em;
     text-align: center;
   }
+
   .Profile__highlights {
     font-family: Gotham;
     font-size: 18px;
@@ -62,15 +63,10 @@ const ProfileStyle = styled.section`
 
   .Profile__overview {
     margin-bottom: 40px;
+
     h3 {
       font-family: Gotham;
       font-size: 18px;
-      font-style: normal;
-      font-weight: 300;
-    }
-    p {
-      font-family: Gotham;
-      font-size: 12px;
       font-style: normal;
       font-weight: 300;
     }
