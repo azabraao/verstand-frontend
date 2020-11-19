@@ -2,6 +2,8 @@ import React, { memo, useRef, useState, useEffect } from "react";
 import iconJson from "../../assets/images/icon-json.svg";
 import DropContainerStyle from "./styles";
 import classNames from "classnames";
+import profileService from "../../services/profile.service";
+import { useHistory } from "react-router-dom";
 
 const DropContainer = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -9,6 +11,7 @@ const DropContainer = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [file, setFile] = useState("");
+  const history = useHistory();
 
   useEffect(() => {
     if (hasError) {
@@ -44,19 +47,44 @@ const DropContainer = () => {
     const files = e.dataTransfer.files;
     const file = files[0];
 
-    if(files.length > 1) {
-      setHasError(true)
+    if (files.length > 1) {
+      setHasError(true);
       setErrorMessage("Please, drop only one file");
-      return
+      return;
     }
 
     handleFile(file);
   };
 
-  const handleFile = (file) => {
+  const handleFile = async (file) => {
     if (!fileIsJSON(file)) {
       setHasError(true);
       setErrorMessage("Please, upload a JSON file");
+      return;
+    }
+
+    const validFileNames = ["singer.json", "entrepreneur.json", "fighter.json"];
+
+    if (!validFileNames.includes(file.name)) {
+      setHasError(true);
+      setErrorMessage("Please use one of the json files we gave to you! :P");
+      return;
+    }
+
+    try {
+      const data = new FormData();
+      data.append("capa", file);
+
+      const response = await profileService.uploadJson(data);
+      console.log(response);
+
+      history.push("profile");
+    } catch (err) {
+      console.log(err);
+      setIsUploading(false);
+      setHasError(true);
+      setErrorMessage("Something went wrong. Please try again");
+
       return;
     }
 

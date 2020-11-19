@@ -1,37 +1,73 @@
-import React, { memo } from "react";
+import React, { memo, useState, useEffect } from "react";
 import Button from "../../components/Button";
 import ProfileStyle from "./styles";
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import imgSinger from "../../assets/images/singer.png";
 import Dashboard from "../../components/Dashboard";
+import profileService from "../../services/profile.service";
+import { useHistory } from "react-router-dom";
 
 const Profile = () => {
+  const [profile, setProfile] = useState({});
+  const history = useHistory();
+
+  useEffect(() => {
+    const JSON = profileService.getStoredJson();
+
+    if (!JSON) {
+      profileService.getJson().then(({ data }) => {
+        profileService.storeJson(data);
+        setProfile(data);
+      });
+    } else {
+      console.log(JSON);
+      setProfile(JSON);
+    }
+  }, []);
+
+  const redirectToDownload = () => {
+    history.push("download");
+  };
+
   return (
     <>
       <Navbar />
       <ProfileStyle className="singer">
         <div className="container">
           <h1>Singer</h1>
-          <img className="Profile__image" src={imgSinger} alt="Foto da pessoa" />
+          <img
+            className="Profile__image"
+            src={imgSinger}
+            alt="Foto da pessoa"
+          />
           <h2 className="Profile__name">Rene S. Lamontagne</h2>
           <article className="Profile__highlights">
-            <p>Age: 21 years</p>
-            <p>Height: 1,62</p>
-            <p>Personality: Extrovert</p>
-            <p>Social skills: Empathy</p>
+            <p>Age: {profile.age}</p>
+            <p>Height: {profile.tall}</p>
+            <p>Personality: {profile.personality}</p>
+            <p>
+              Methodical skills:
+              <ul>
+                {profile["methodical_skills"]?.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </p>
           </article>
           <article className="Profile__overview">
             <h3>Overview</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
-              nulla obcaecati possimus? Architecto repudiandae ipsam ut eaque
-              aspernatur optio, magni a saepe cumque, aut ad necessitatibus
-              quam. Velit, dolore! Nihil?
-            </p>
+            <p>{profile.description}</p>
           </article>
-          <Dashboard />
-          <Button className="Profile__btn">Download</Button>
+          <Dashboard
+            memory={profile.dashboard?.memory}
+            happiness={profile.dashboard?.happiness}
+            reasoning={profile.dashboard?.reasoning}
+            analysis={profile.dashboard?.analysis}
+            intelligence={profile.dashboard?.intelligence}
+          />
+          <Button onClick={redirectToDownload} className="Profile__btn">
+            Download
+          </Button>
         </div>
       </ProfileStyle>
     </>

@@ -1,14 +1,8 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import DashboardStyle from "./styles";
 import Chart from "react-apexcharts";
 
-const Dashboard = () => {
-  const [memory, setMemory] = useState(100);
-  const [happiness, setHappiness] = useState(80);
-  const [reasoning, setReasoning] = useState(50);
-  const [analysis, setAnalysis] = useState(90);
-  const [intelligence, setIntelligence] = useState(60);
-
+const Dashboard = (memory, happiness, reasoning, analysis, intelligence) => {
   return (
     <DashboardStyle>
       <h3>Dashboard</h3>

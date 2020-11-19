@@ -136,6 +136,19 @@ const GlobalStyles = createGlobalStyle`
         margin: 0 auto
     }
     
+
+    ul li:before {
+        content: " - ";
+    }
+
+    ul {
+        margin-bottom: 16px
+    }
+
+    ul li {
+        padding-left: 16px;
+    }
+
 `;
 
 export default GlobalStyles;

@@ -38,6 +38,10 @@ const NavbarStyle = styled.nav`
         a.active {
           text-decoration: underline;
         }
+
+        :before {
+          content: "";
+        }
       }
 
       li,
