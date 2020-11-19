@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import LinkStyle from "./linkStyle";
 import ButtonStyle from "./styles";
 
-const Button = ({ isLoading, href, size, children, ...props }) => {
+const Button = ({ isLoading, href, className, size, children, ...props }) => {
   if (href) {
     return (
       <LinkStyle {...props} href={href}>
@@ -12,7 +12,7 @@ const Button = ({ isLoading, href, size, children, ...props }) => {
   }
 
   return (
-    <ButtonStyle {...props} className={size}>
+    <ButtonStyle {...props} className={`${size} ${className}`}>
       {isLoading ? "Loading..." : children}
     </ButtonStyle>
   );
