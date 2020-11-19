@@ -21,7 +21,7 @@ const handleColor = ({ theme }) => {
   return "#fff";
 };
 
-const ButtonStyle = styled.button`
+const LinkStyle = styled.a`
   background: ${handleBackground};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
@@ -34,7 +34,15 @@ const ButtonStyle = styled.button`
   transition: all 0.5s;
   cursor: pointer;
   width: min-content;
-  
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 41px;
+
+  span {
+    margin-bottom: -8px;
+  }
 
   &.md {
     padding: 20px;
@@ -52,4 +60,4 @@ const ButtonStyle = styled.button`
   }
 `;
 
-export default ButtonStyle;
+export default LinkStyle;

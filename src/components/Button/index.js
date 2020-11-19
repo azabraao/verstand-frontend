@@ -1,9 +1,20 @@
 import React, { memo } from "react";
+import LinkStyle from "./linkStyle";
 import ButtonStyle from "./styles";
 
-const Button = ({ isLoading, children, ...props }) => {
+const Button = ({ isLoading, href, size, children, ...props }) => {
+  if (href) {
+    return (
+      <LinkStyle {...props} href={href}>
+        {children}
+      </LinkStyle>
+    );
+  }
+
   return (
-    <ButtonStyle {...props}>{isLoading ? "Loading..." : children}</ButtonStyle>
+    <ButtonStyle {...props} className={size}>
+      {isLoading ? "Loading..." : children}
+    </ButtonStyle>
   );
 };
 

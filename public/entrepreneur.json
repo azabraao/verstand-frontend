@@ -1,0 +1,25 @@
+{
+  "profile_kind": "entrepreneur",
+  "age": 27,
+  "image_path": "https://azabraao.files.wordpress.com/2020/11/entrepreneur.png",
+  "physical_characteristic": "strong",
+  "description": "timbre baixo, nascido ashdals",
+  "tall": "1.80",
+  "personality": "extrovert",
+  "personal_skills": ["resilience", "responsability"],
+  "methodical_skills": [
+    "analytical",
+    "organizational",
+    "problem solving",
+    "emotional resistance"
+  ],
+  "social_skills": ["empathy", "team player", "great interaction ability"],
+  "dashboard": {
+    "memory": 120,
+    "happiness": 80,
+    "reasoning": 79,
+    "analysis": 50,
+    "intelligence": 100
+  },
+  "full_report": "https://gerenciamais.com.br/inc/thumb.php?end=../uploads/recursos__foto_4.jpg&largura=773"
+}
