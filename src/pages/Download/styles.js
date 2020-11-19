@@ -21,7 +21,11 @@ const ProfileStyle = styled.section`
     margin-top: 24px;
   }
 
-
+  article {
+    p:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
 `;
 
 export default ProfileStyle;
