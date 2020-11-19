@@ -19,6 +19,10 @@ const Register = () => {
   const history = useHistory();
 
   useEffect(() => {
+    localStorage.clear();
+  }, []);
+
+  useEffect(() => {
     !!password && setPasswordError("");
     !!email && setEmailError("");
     !!name && setNameError("");

@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback } from "react";
+import React, { memo, useState, useCallback, useEffect } from "react";
 import Button from "../../components/Button";
 import HomeStyle from "./styles";
 import { useHistory } from "react-router-dom";
@@ -6,6 +6,10 @@ import { useHistory } from "react-router-dom";
 const Home = () => {
   const history = useHistory();
   const [madeDownload, setMadeDownload] = useState(false);
+
+  useEffect(() => {
+    localStorage.clear()
+  },[])
 
   const setDownloadAsMade = useCallback(() => {
       setMadeDownload(true);

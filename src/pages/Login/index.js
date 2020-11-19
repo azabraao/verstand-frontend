@@ -17,6 +17,10 @@ const Login = () => {
   const history = useHistory();
 
   useEffect(() => {
+    localStorage.clear();
+  }, []);
+  
+  useEffect(() => {
     !!password && setPasswordError("");
     !!email && setEmailError("");
   }, [email, password]);
