@@ -11,6 +11,16 @@ const DropContainer = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [file, setFile] = useState("");
+  const [canRedirect, setCanRedirect] = useState(false);
+
+  useEffect(() => {
+    if (isUploading) {
+      setTimeout(() => {
+        isUploading && canRedirect && history.push("profile");
+      }, 10000);
+    }
+  }, [isUploading, canRedirect]);
+
   const history = useHistory();
 
   useEffect(() => {
@@ -71,14 +81,15 @@ const DropContainer = () => {
       return;
     }
 
+    setIsUploading(true);
+
     try {
       const data = new FormData();
       data.append("capa", file);
 
       const response = await profileService.uploadJson(data);
-      console.log(response);
 
-      history.push("profile");
+      setCanRedirect(true)
     } catch (err) {
       console.log(err);
       setIsUploading(false);
@@ -88,7 +99,6 @@ const DropContainer = () => {
       return;
     }
 
-    setIsUploading(true);
     setFile(file);
   };
 

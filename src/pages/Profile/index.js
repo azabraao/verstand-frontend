@@ -20,9 +20,9 @@ const Profile = () => {
         setProfile(data);
       });
     } else {
-      console.log(JSON);
       setProfile(JSON);
     }
+    console.log(JSON);
   }, []);
 
   const redirectToDownload = () => {
@@ -32,12 +32,12 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <ProfileStyle className="singer">
+      <ProfileStyle className={profile.profile_kind}>
         <div className="container">
-          <h1>Singer</h1>
+          <h1>{profile.profile_kind}</h1>
           <img
             className="Profile__image"
-            src={imgSinger}
+            src={profile.image_path}
             alt="Foto da pessoa"
           />
           <h2 className="Profile__name">Rene S. Lamontagne</h2>

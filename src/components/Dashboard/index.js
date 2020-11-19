@@ -2,7 +2,16 @@ import React, { memo } from "react";
 import DashboardStyle from "./styles";
 import Chart from "react-apexcharts";
 
-const Dashboard = (memory, happiness, reasoning, analysis, intelligence) => {
+const Dashboard = ({
+  memory,
+  happiness,
+  reasoning,
+  analysis,
+  intelligence,
+}) => {
+  if (!memory || !happiness || !reasoning || !analysis || !intelligence)
+    return null;
+
   return (
     <DashboardStyle>
       <h3>Dashboard</h3>
