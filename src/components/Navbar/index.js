@@ -3,6 +3,7 @@ import Button from "../Button";
 import NavbarStyle from "./styles";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
+import authService from "../../services/auth.service";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -32,6 +33,10 @@ const Navbar = () => {
     return openedMenuCleanup;
   }, [isActive]);
 
+  const logout = () => {
+    authService.logout();
+  };
+
   return (
     <NavbarStyle>
       <div className={classNames("Navbar__menu", { isActive })}>
@@ -44,9 +49,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/download" activeClassName="active">
               Download
-            </NavLink>            
+            </NavLink>
           </li>
-          <Button theme="danger">Exit</Button>
+          <Button theme="danger" onClick={logout}>
+            Exit
+          </Button>
         </ul>
       </div>
       <div
