@@ -22,7 +22,7 @@ const Home = () => {
         <article>
           <p>
             Em Altered Carbon vemos a representação do que poderia ser um novo
-            limiar para a humanidade: se se pudessemos viver para sempre?
+            limiar para a humanidade: e se pudessemos viver para sempre?
           </p>
           <p>
             Este projeto se propôe a ser uma simulação do que seria a compra de
