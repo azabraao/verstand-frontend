@@ -75,14 +75,6 @@ const HomeStyle = styled.section`
     justify-content: center;
   }
 
-  @keyframes fade {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 `;
 
 export default HomeStyle;

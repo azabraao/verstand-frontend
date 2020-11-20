@@ -2,7 +2,6 @@ import React, { memo, useState, useEffect } from "react";
 import Button from "../../components/Button";
 import SleeveStyle from "./styles";
 import Navbar from "../../components/Navbar";
-import imgSinger from "../../assets/images/singer.png";
 import Dashboard from "../../components/Dashboard";
 import sleeveService from "../../services/sleeve.service";
 import { useHistory } from "react-router-dom";
@@ -22,7 +21,6 @@ const Sleeve = () => {
     } else {
       setSleeve(JSON);
     }
-    console.log(JSON);
   }, []);
 
   const redirectToDownload = () => {
@@ -47,14 +45,12 @@ const Sleeve = () => {
             <p>Age: {sleeve.age}</p>
             <p>Height: {sleeve.tall}</p>
             <p>Personality: {sleeve.personality}</p>
-            <p>
+            <ul>
               Methodical skills:
-              <ul>
-                {sleeve["methodical_skills"]?.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </p>
+              {sleeve["methodical_skills"]?.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </article>
           <article className="Sleeve__overview">
             <h3>Overview</h3>

@@ -1,8 +1,6 @@
 import React, { memo, useEffect, useState, useCallback } from "react";
 import DownloadStyle from "./styles";
 import Navbar from "../../components/Navbar";
-import Button from "../../components/Button";
-import { useHistory } from "react-router-dom";
 import sleeveService from "../../services/sleeve.service";
 
 const Download = () => {
@@ -15,17 +13,12 @@ const Download = () => {
     if (!JSON) {
       sleeveService.getJson().then(({ data }) => {
         sleeveService.storeJson(data);
-        console.log("set", data);
         setDownloadUrl(data.full_report);
       });
     } else {
       setDownloadUrl(JSON.full_report);
     }
   }, []);
-
-  useEffect(() => {
-    downloadUrl && countAndDownload();
-  }, [downloadUrl]);
 
   const countAndDownload = useCallback(() => {
     let counter = 10;
@@ -39,7 +32,11 @@ const Download = () => {
 
       counter--;
     }, 1000);
-  }, [second, downloadUrl]);
+  }, [downloadUrl]);
+
+  useEffect(() => {
+    downloadUrl && countAndDownload();
+  }, [downloadUrl, countAndDownload]);
 
   return (
     <>
@@ -54,7 +51,7 @@ const Download = () => {
               <p>We are preparing your download...</p>
             ) : (
               <>
-                {second != 0 && (
+                {second !== 0 && (
                   <p>(Your download will start in a new tab in {second})</p>
                 )}
               </>
@@ -69,9 +66,11 @@ const Download = () => {
           <footer>
             <a
               href="https://mybinder.org/v2/gh/azabraao/world-happiness-report/master"
+              rel="noreferrer"
               target="_blank"
             >
-              See a intelligent report of what really makes people (then you) happy
+              See a intelligent report of what really makes people (then you)
+              happy
             </a>
           </footer>
         </main>

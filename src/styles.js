@@ -10,6 +10,15 @@ const GlobalStyles = createGlobalStyle`
         height: 100%; 
     }
 
+
+  .fade {
+    animation-name: fade;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    margin-bottom: 24px;
+  }
+
     @font-face {
         font-family: Netron;
         src: url(${Netron})
@@ -149,28 +158,6 @@ const GlobalStyles = createGlobalStyle`
         padding-left: 16px;
     }
         
-    @-webkit-keyframes MovingBackground {
-        0% {
-        background-position: 0% 50%;
-        }
-        50% {
-        background-position: 100% 50%;
-        }
-        100% {
-        background-position: 0% 50%;
-        }
-    }
-    @-moz-keyframes MovingBackground {
-        0% {
-        background-position: 0% 50%;
-        }
-        50% {
-        background-position: 100% 50%;
-        }
-        100% {
-        background-position: 0% 50%;
-        }
-    }
     @keyframes MovingBackground {
         0% {
         background-position: 0% 50%;
@@ -180,6 +167,15 @@ const GlobalStyles = createGlobalStyle`
         }
         100% {
         background-position: 0% 50%;
+        }
+    }
+
+    @keyframes fade {
+        from {
+        opacity: 0;
+        }
+        to {
+        opacity: 1;
         }
     }
 `;

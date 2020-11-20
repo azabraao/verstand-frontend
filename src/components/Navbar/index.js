@@ -31,7 +31,7 @@ const Navbar = () => {
     }
 
     return openedMenuCleanup;
-  }, [isActive]);
+  }, [isActive, openedMenuCleanup]);
 
   const logout = () => {
     authService.logout();

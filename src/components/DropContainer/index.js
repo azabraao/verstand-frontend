@@ -12,6 +12,8 @@ const DropContainer = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [file, setFile] = useState("");
   const [canRedirect, setCanRedirect] = useState(false);
+  
+  const history = useHistory();
 
   useEffect(() => {
     if (isUploading) {
@@ -19,9 +21,8 @@ const DropContainer = () => {
         isUploading && canRedirect && history.push("sleeve");
       }, 10000);
     }
-  }, [isUploading, canRedirect]);
+  }, [isUploading, canRedirect, history]);
 
-  const history = useHistory();
 
   useEffect(() => {
     if (hasError) {
@@ -87,11 +88,10 @@ const DropContainer = () => {
       const data = new FormData();
       data.append("capa", file);
 
-      const response = await sleeveService.uploadJson(data);
+      await sleeveService.uploadJson(data);
 
       setCanRedirect(true);
     } catch (err) {
-      console.log(err);
       setIsUploading(false);
       setHasError(true);
       setErrorMessage("Something went wrong. Please try again");
@@ -118,7 +118,7 @@ const DropContainer = () => {
       onDrop={onFileDrop}
       onClick={onContainerClick}
       className={classNames({ isDragging, hasError, isUploading })}
-      aria-dropeffect={true}
+      aria-dropeffect="move"
     >
       <div className="DragContainer__inside">
         <input

@@ -1,4 +1,4 @@
-import api from './api'
+import api from "./api";
 
 const authService = {
   async authenticate(data) {
@@ -23,15 +23,14 @@ const authService = {
       let parsedData = JSON.parse(data);
       return parsedData;
     } catch (error) {
-      console.log(error);
       return null;
     }
   },
 
   logout() {
-      localStorage.clear()
-      window.location.reload()
-  }
+    localStorage.clear();
+    window.location.reload();
+  },
 };
 
 export default authService;

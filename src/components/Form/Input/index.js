@@ -5,7 +5,7 @@ const Input = React.forwardRef(
   ({ name, label, type, error, ...props }, ref) => {
     return (
       <InputStyle>
-        <label for={name}>{label}</label>
+        <label htmlFor={name}>{label}</label>
         <input ref={ref} id={name} name={name} type={type} {...props} />
         <article>
           <p>{error}</p>

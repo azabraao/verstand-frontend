@@ -19,7 +19,7 @@ const Login = () => {
   useEffect(() => {
     localStorage.clear();
   }, []);
-  
+
   useEffect(() => {
     !!password && setPasswordError("");
     !!email && setEmailError("");
@@ -27,7 +27,7 @@ const Login = () => {
 
   useEffect(() => {
     (passwordError || emailError || formError) && setIsLoading(false);
-  }, [emailError, passwordError]);
+  }, [emailError, passwordError, formError]);
 
   const doFormValidations = (e) => {
     setIsLoading(true);
@@ -44,7 +44,7 @@ const Login = () => {
       password: /^.{6,35}$/,
     };
 
-    const validEmail = regex.email.test(email); 
+    const validEmail = regex.email.test(email);
     const validPassword = regex.password.test(password);
 
     const stopOnRegex = !validEmail && !validPassword;
@@ -85,6 +85,7 @@ const Login = () => {
             type="email"
             name="email"
             id="email"
+            autoFocus
             label="E-mail address"
             placeholder="Like synth@carbon.io"
             error={emailError}
