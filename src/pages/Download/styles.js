@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProfileStyle = styled.section`
+const SleeveStyle = styled.section`
   background: #000;
   min-height: 100vh;
   color: #ffffff;
@@ -32,4 +32,4 @@ const ProfileStyle = styled.section`
   }
 `;
 
-export default ProfileStyle;
+export default SleeveStyle;

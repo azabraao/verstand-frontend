@@ -42,8 +42,8 @@ const Navbar = () => {
       <div className={classNames("Navbar__menu", { isActive })}>
         <ul>
           <li className="Navbar__menu-item">
-            <NavLink to="/profile" activeClassName="active">
-              Profile
+            <NavLink to="/sleeve" activeClassName="active">
+              Sleeve
             </NavLink>
           </li>
           <li className="Navbar__menu-item">

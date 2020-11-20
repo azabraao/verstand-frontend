@@ -1,7 +1,7 @@
 import api from "./api";
 import authService from "./auth.service";
 
-const profileService = {
+const sleeveService = {
   async getJson() {
     const { token, id } = authService.getUser();
 
@@ -29,4 +29,4 @@ const profileService = {
   },
 };
 
-export default profileService;
+export default sleeveService;

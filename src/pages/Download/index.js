@@ -3,18 +3,18 @@ import DownloadStyle from "./styles";
 import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
 import { useHistory } from "react-router-dom";
-import profileService from "../../services/profile.service";
+import sleeveService from "../../services/sleeve.service";
 
 const Download = () => {
   const [downloadUrl, setDownloadUrl] = useState("");
   const [second, setSecond] = useState(10);
 
   useEffect(() => {
-    const JSON = profileService.getStoredJson();
+    const JSON = sleeveService.getStoredJson();
 
     if (!JSON) {
-      profileService.getJson().then(({ data }) => {
-        profileService.storeJson(data);
+      sleeveService.getJson().then(({ data }) => {
+        sleeveService.storeJson(data);
         console.log("set", data);
         setDownloadUrl(data.full_report);
       });
@@ -48,7 +48,7 @@ const Download = () => {
         <main className="container">
           <article>
             <header>
-              <h1>Report download</h1>
+              <h1>Sleeve Full Report</h1>
             </header>
             {!downloadUrl ? (
               <p>We are preparing your download...</p>
@@ -62,8 +62,8 @@ const Download = () => {
 
             <p>
               Now remember to ask yourself: I'm getting happier by changing my
-              body? Is it right to think that much on just me? What about the
-              things around?
+              body? Is it right to think that much in just me? What about the
+              other people?
             </p>
           </article>
           <footer>
@@ -71,7 +71,7 @@ const Download = () => {
               href="https://mybinder.org/v2/gh/azabraao/world-happiness-report/master"
               target="_blank"
             >
-              See a intelligent report of what really makes people you happy
+              See a intelligent report of what really makes people (then you) happy
             </a>
           </footer>
         </main>

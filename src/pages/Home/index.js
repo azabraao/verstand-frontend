@@ -28,10 +28,10 @@ const Home = () => {
           </p>
           <p>
             Este projeto se propôe a ser uma simulação do que seria a compra de
-            uma nova "capa" como em Altered Carbon: se você se machucou
-            gravemente, se sente velho ou simplesmente cansou de si mesmo,
-            adquira uma nova capa! Sua consciência se manterá mas seu corpo será
-            novo.
+            uma nova "capa" (ou como na série, "Sleeve") como em Altered Carbon:
+            se você se machucou gravemente, se sente velho ou simplesmente
+            cansou de si mesmo, adquira uma nova capa! Sua consciência se
+            manterá mas seu corpo será novo.
           </p>
           <p>
             Como dito na serie, "você merece ser por fora como se sente por
@@ -41,7 +41,7 @@ const Home = () => {
 
         <hr />
         <main role="main">
-          <h2>Pick here your cover</h2>
+          <h2>Pick here your Sleeve</h2>
 
           {madeDownload && (
             <p className="provocation" role="complementary">

@@ -64,7 +64,7 @@ const Login = () => {
       if (!data) throw new Error("Something went wrong");
       authService.storeUser(data);
 
-      history.push("/profile");
+      history.push("/sleeve");
     } catch (err) {
       setFormError(
         "Unfortunately something is wrong with us. Please, try again."

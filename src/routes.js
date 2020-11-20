@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Download from "./pages/Download";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Profile from "./pages/Profile";
+import Sleeve from "./pages/Sleeve";
 import Register from "./pages/Register";
 import Upload from "./pages/Upload";
 import ProtectedRoute from "./protected.route";
@@ -17,7 +17,7 @@ const Routes = () => {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <ProtectedRoute path="/upload" exact component={Upload} />
-          <ProtectedRoute path="/profile" exact component={Profile} />
+          <ProtectedRoute path="/sleeve" exact component={Sleeve} />
           <ProtectedRoute path="/download" exact component={Download} />
         </Switch>
       </BrowserRouter>

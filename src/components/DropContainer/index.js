@@ -2,7 +2,7 @@ import React, { memo, useRef, useState, useEffect } from "react";
 import iconJson from "../../assets/images/icon-json.svg";
 import DropContainerStyle from "./styles";
 import classNames from "classnames";
-import profileService from "../../services/profile.service";
+import sleeveService from "../../services/sleeve.service";
 import { useHistory } from "react-router-dom";
 
 const DropContainer = () => {
@@ -16,7 +16,7 @@ const DropContainer = () => {
   useEffect(() => {
     if (isUploading) {
       setTimeout(() => {
-        isUploading && canRedirect && history.push("profile");
+        isUploading && canRedirect && history.push("sleeve");
       }, 10000);
     }
   }, [isUploading, canRedirect]);
@@ -87,7 +87,7 @@ const DropContainer = () => {
       const data = new FormData();
       data.append("capa", file);
 
-      const response = await profileService.uploadJson(data);
+      const response = await sleeveService.uploadJson(data);
 
       setCanRedirect(true);
     } catch (err) {

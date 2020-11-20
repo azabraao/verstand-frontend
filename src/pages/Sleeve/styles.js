@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProfileStyle = styled.section`
+const SleeveStyle = styled.section`
   background: #000;
   min-height: 100vh;
   color: #ffffff;
@@ -32,14 +32,14 @@ const ProfileStyle = styled.section`
     padding-bottom: 24px;
   }
 
-  .Profile__image {
+  .Sleeve__image {
     text-align: center;
     margin-bottom: 24px;
     margin: 0 auto 24px auto;
     display: block;
   }
 
-  .Profile__name {
+  .Sleeve__name {
     text-align: center;
     font-family: Gotham;
     margin-bottom: 24px;
@@ -52,7 +52,7 @@ const ProfileStyle = styled.section`
     text-align: center;
   }
 
-  .Profile__highlights {
+  .Sleeve__highlights {
     font-family: Gotham;
     font-size: 18px;
     font-style: normal;
@@ -61,7 +61,7 @@ const ProfileStyle = styled.section`
     margin-bottom: 40px;
   }
 
-  .Profile__overview {
+  .Sleeve__overview {
     margin-bottom: 40px;
 
     h3 {
@@ -72,10 +72,10 @@ const ProfileStyle = styled.section`
     }
   }
 
-  .Profile__btn {
+  .Sleeve__btn {
     margin: 0 auto;
     display: block;
   }
 `;
 
-export default ProfileStyle;
+export default SleeveStyle;
