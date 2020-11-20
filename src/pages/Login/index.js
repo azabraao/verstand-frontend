@@ -74,7 +74,7 @@ const Login = () => {
 
   return (
     <LoginStyle>
-      <div className="container">
+      <main className="container">
         <h1>Verstand</h1>
         <h2>Login</h2>
         <form onSubmit={doFormValidations}>
@@ -112,7 +112,7 @@ const Login = () => {
             <div>Sign up now</div>
           </Link>
         </footer>
-      </div>
+      </main>
     </LoginStyle>
   );
 };

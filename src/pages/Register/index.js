@@ -15,6 +15,7 @@ const Register = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState();
 
   const history = useHistory();
 
@@ -29,12 +30,16 @@ const Register = () => {
   }, [name, email, password]);
 
   useEffect(() => {
-    (nameError || passwordError || emailError || formError) &&
+    if (nameError || passwordError || emailError || formError) {
+      setHasError(true);
       setIsLoading(false);
-  }, [emailError, passwordError, nameError]);
+    } else {
+      setHasError(false);
+    }
+  }, [emailError, passwordError, nameError, formError]);
 
   const doFormValidations = (e) => {
-    setIsLoading(true);
+    !hasError && setIsLoading(true);
 
     e.preventDefault();
     const stopOnRequired = !name || !email || !password;
@@ -54,7 +59,7 @@ const Register = () => {
     const validEmail = regex.email.test(email);
     const validPassword = regex.password.test(password);
 
-    const stopOnRegex = !validName && !validEmail && !validPassword;
+    const stopOnRegex = !validName || !validEmail || !validPassword;
 
     if (!validName) setNameError("Too small or to big name");
     if (!validEmail) setEmailError("Invalid e-mail");
@@ -82,7 +87,7 @@ const Register = () => {
 
   return (
     <RegisterStyle>
-      <div className="container">
+      <main className="container">
         <h1>Verstand</h1>
         <h2>Create account</h2>
         <form onSubmit={doFormValidations}>
@@ -90,8 +95,8 @@ const Register = () => {
             placeholder="Like Takeshi Kovacs"
             tabIndex="0"
             onChange={({ target: { value } }) => setName(value)}
-            type="name"
             name="name"
+            autoFocus
             id="name"
             label="Name"
             maxLength={255}
@@ -106,6 +111,7 @@ const Register = () => {
             id="email"
             label="E-mail address"
             placeholder="Like synth@carbon.io"
+            required
             error={emailError}
           />
           <Input
@@ -116,6 +122,7 @@ const Register = () => {
             name="password"
             id="password"
             label="password"
+            required
             placeholder="Like ************"
             error={passwordError}
           />
@@ -132,7 +139,7 @@ const Register = () => {
             <div>Sign in</div>
           </Link>
         </footer>
-      </div>
+      </main>
     </RegisterStyle>
   );
 };

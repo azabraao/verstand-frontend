@@ -1,16 +1,18 @@
 import React from "react";
 import InputStyle from "./styles";
 
-const Input = React.forwardRef(({ label, type, error, ...props }, ref) => {
-  return (
-    <InputStyle>
-      <label>{label}</label>
-      <input ref={ref} type={type} {...props} />
-      <article>
-        <p>{error}</p>
-      </article>
-    </InputStyle>
-  );
-});
+const Input = React.forwardRef(
+  ({ name, label, type, error, ...props }, ref) => {
+    return (
+      <InputStyle>
+        <label for={name}>{label}</label>
+        <input ref={ref} id={name} name={name} type={type} {...props} />
+        <article>
+          <p>{error}</p>
+        </article>
+      </InputStyle>
+    );
+  }
+);
 
 export default Input;

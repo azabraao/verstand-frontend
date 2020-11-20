@@ -13,7 +13,7 @@ const Download = () => {
     const JSON = profileService.getStoredJson();
 
     if (!JSON) {
-      profileService.getJson().then(({data}) => {
+      profileService.getJson().then(({ data }) => {
         profileService.storeJson(data);
         console.log("set", data);
         setDownloadUrl(data.full_report);
@@ -45,13 +45,18 @@ const Download = () => {
     <>
       <Navbar />
       <DownloadStyle className="singer">
-        <div className="container">
+        <main className="container">
           <article>
+            <header>
+              <h1>Report download</h1>
+            </header>
             {!downloadUrl ? (
               <p>We are preparing your download...</p>
             ) : (
               <>
-                {second != 0 && <p>(Your download will start in a new tab in {second})</p>}
+                {second != 0 && (
+                  <p>(Your download will start in a new tab in {second})</p>
+                )}
               </>
             )}
 
@@ -61,14 +66,15 @@ const Download = () => {
               things around?
             </p>
           </article>
-
-          <a
-            href="https://mybinder.org/v2/gh/azabraao/world-happiness-report/master"
-            target="_blank"
-          >
-            See a intelligent report of what really makes people you happy
-          </a>
-        </div>
+          <footer>
+            <a
+              href="https://mybinder.org/v2/gh/azabraao/world-happiness-report/master"
+              target="_blank"
+            >
+              See a intelligent report of what really makes people you happy
+            </a>
+          </footer>
+        </main>
       </DownloadStyle>
     </>
   );

@@ -15,6 +15,10 @@ const ProfileStyle = styled.section`
   -moz-animation: MovingBackground 6s ease infinite;
   animation: MovingBackground 6s ease infinite;
 
+  header {
+    margin-bottom: 24px;
+  }
+
   a {
     color: #ffffff;
     display: block;

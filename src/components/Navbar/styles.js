@@ -31,7 +31,7 @@ const NavbarStyle = styled.nav`
       justify-content: center;
       align-items: center;
 
-      li {
+      .Navbar__menu-item {
         padding: 16px 40px;
         font-family: Netron;
 
@@ -44,7 +44,7 @@ const NavbarStyle = styled.nav`
         }
       }
 
-      li,
+      .Navbar__menu-item,
       a {
         color: #ffffff;
         text-decoration: none;
@@ -52,12 +52,17 @@ const NavbarStyle = styled.nav`
       }
     }
 
-    button {
+    .Navbar__menu-button {
       position: absolute;
       bottom: 120px;
       margin: 0 auto;
       left: 0;
       right: 0;
+      padding: 0;
+
+      :before {
+        content: "";
+      }
     }
   }
   .Navbar__hamburguer-width,

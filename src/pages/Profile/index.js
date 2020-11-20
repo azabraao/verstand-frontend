@@ -33,8 +33,10 @@ const Profile = () => {
     <>
       <Navbar />
       <ProfileStyle className={profile.profile_kind}>
-        <div className="container">
-          <h1>{profile.profile_kind}</h1>
+        <main className="container">
+          <header>
+            <h1>{profile.profile_kind}</h1>
+          </header>
           <img
             className="Profile__image"
             src={profile.image_path}
@@ -68,7 +70,7 @@ const Profile = () => {
           <Button onClick={redirectToDownload} className="Profile__btn">
             Download
           </Button>
-        </div>
+        </main>
       </ProfileStyle>
     </>
   );

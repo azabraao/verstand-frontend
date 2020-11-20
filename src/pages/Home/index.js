@@ -8,18 +8,20 @@ const Home = () => {
   const [madeDownload, setMadeDownload] = useState(false);
 
   useEffect(() => {
-    localStorage.clear()
-  },[])
+    localStorage.clear();
+  }, []);
 
   const setDownloadAsMade = useCallback(() => {
-      setMadeDownload(true);
+    setMadeDownload(true);
   }, []);
 
   return (
     <HomeStyle>
       <div className="container">
-        <h1>O que é o Verstand</h1>
         <article>
+          <header>
+            <h1>O que é o Verstand</h1>
+          </header>
           <p>
             Em Altered Carbon vemos a representação do que poderia ser um novo
             limiar para a humanidade: e se pudessemos viver para sempre?
@@ -38,43 +40,46 @@ const Home = () => {
         </article>
 
         <hr />
-        <h2>Pick here your cover</h2>
+        <main role="main">
+          <h2>Pick here your cover</h2>
 
-        {madeDownload && (
-          <p className="provocation">
-            Ask yourself: You will really be happier by just getting a new body?
-          </p>
-        )}
+          {madeDownload && (
+            <p className="provocation" role="complementary">
+              Ask yourself: You will really be happier by just getting a new
+              body?
+            </p>
+          )}
 
-        <div className="Home__buttons">
+          <div className="Home__buttons">
+            <Button
+              onMouseOver={setDownloadAsMade}
+              theme="singer"
+              href="singer.json"
+              download="singer.json"
+            >
+              <span>Singer</span>
+            </Button>
+            <Button
+              onMouseOver={setDownloadAsMade}
+              theme="fighter"
+              href="fighter.json"
+              download="fighter.json"
+            >
+              <span>Fighter</span>
+            </Button>
+            <Button
+              onMouseOver={setDownloadAsMade}
+              theme="entrepreneur"
+              href="entrepreneur.json"
+              download="entrepreneur.json"
+            >
+              <span>entrepreneur</span>
+            </Button>
+          </div>
+        </main>
+        <footer className="Home__cta">
           <Button
-            onMouseOver={setDownloadAsMade}
-            theme="singer"
-            href="singer.json"
-            download="singer.json"
-          >
-            <span>Singer</span>
-          </Button>
-          <Button
-            onMouseOver={setDownloadAsMade}
-            theme="fighter"
-            href="fighter.json"
-            download="fighter.json"
-          >
-            <span>Fighter</span>
-          </Button>
-          <Button
-            onMouseOver={setDownloadAsMade}
-            theme="entrepreneur"
-            href="entrepreneur.json"
-            download="entrepreneur.json"
-          >
-            <span>entrepreneur</span>
-          </Button>
-        </div>
-
-        <div className="Home__cta">
-          <Button
+            role="link"
             size="md"
             onClick={() => {
               history.push("/register");
@@ -82,7 +87,7 @@ const Home = () => {
           >
             Start the experience
           </Button>
-        </div>
+        </footer>
       </div>
     </HomeStyle>
   );

@@ -12,7 +12,13 @@ const Button = ({ isLoading, href, className, size, children, ...props }) => {
   }
 
   return (
-    <ButtonStyle {...props} className={`${size} ${className}`}>
+    <ButtonStyle
+      {...props}
+      role="button"
+      disabled={isLoading}
+      aria-disabled={isLoading}
+      className={`${size} ${className}`}
+    >
       {isLoading ? "Loading..." : children}
     </ButtonStyle>
   );

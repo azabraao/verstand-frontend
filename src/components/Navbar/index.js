@@ -41,19 +41,21 @@ const Navbar = () => {
     <NavbarStyle>
       <div className={classNames("Navbar__menu", { isActive })}>
         <ul>
-          <li>
+          <li className="Navbar__menu-item">
             <NavLink to="/profile" activeClassName="active">
               Profile
             </NavLink>
           </li>
-          <li>
+          <li className="Navbar__menu-item">
             <NavLink to="/download" activeClassName="active">
               Download
             </NavLink>
           </li>
-          <Button theme="danger" onClick={logout}>
-            Exit
-          </Button>
+          <li className="Navbar__menu-button">
+            <Button theme="danger" onClick={logout}>
+              Exit
+            </Button>
+          </li>
         </ul>
       </div>
       <div

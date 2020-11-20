@@ -89,7 +89,7 @@ const DropContainer = () => {
 
       const response = await profileService.uploadJson(data);
 
-      setCanRedirect(true)
+      setCanRedirect(true);
     } catch (err) {
       console.log(err);
       setIsUploading(false);
@@ -118,11 +118,13 @@ const DropContainer = () => {
       onDrop={onFileDrop}
       onClick={onContainerClick}
       className={classNames({ isDragging, hasError, isUploading })}
+      aria-dropeffect={true}
     >
       <div className="DragContainer__inside">
         <input
           onChange={onFileInputChange}
           hidden
+          aria-hidden
           ref={hiddenInputRef}
           type="file"
         />

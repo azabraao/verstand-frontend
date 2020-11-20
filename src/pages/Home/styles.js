@@ -3,9 +3,19 @@ import styled from "styled-components";
 const HomeStyle = styled.section`
   min-height: 100vh;
   color: #ffffff;
-  padding: 120px 0;
-  background: linear-gradient(270deg, #138769, #272d2c);
-  background-size: 400% 400%;
+  padding: 80px 0;
+
+  @media only screen and (min-width: 768px) {
+    padding: 120px 0;
+  }
+  
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(106, 112, 113, 1) 100%
+  );
+  background-size: 200% 200%;
   -webkit-animation: MovingBackground 6s ease infinite;
   -moz-animation: MovingBackground 6s ease infinite;
   animation: MovingBackground 6s ease infinite;
@@ -24,7 +34,7 @@ const HomeStyle = styled.section`
   article p:not(:last-child) {
     margin-bottom: 16px;
   }
-  
+
   p {
     font-size: 28px;
     text-align: center;
@@ -39,7 +49,8 @@ const HomeStyle = styled.section`
     animation-name: fade;
     animation-timing-function: linear;
     animation-duration: 2s;
-    animation-fill-mode: forwards;margin-bottom:24px
+    animation-fill-mode: forwards;
+    margin-bottom: 24px;
   }
 
   .Home__buttons {

@@ -5,16 +5,18 @@ import DropContainer from "../../components/DropContainer";
 const Upload = () => {
   return (
     <UploadStyle>
-      <div className="container">
-        <h1>Verstand</h1>
-        <h2>Upload</h2>
+      <main className="container">
+        <header>
+          <h1>Verstand</h1>
+          <h2>Upload</h2>
+        </header>
 
         <article className="Upload__header-text">
           <p>Insert the .JSON file to start the experiment</p>
         </article>
 
         <DropContainer />
-      </div>
+      </main>
     </UploadStyle>
   );
 };
