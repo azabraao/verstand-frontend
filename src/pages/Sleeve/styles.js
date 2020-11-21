@@ -14,8 +14,7 @@ const SleeveStyle = styled.section`
   }
 
   &.fighter {
-    background: linear-gradient(180deg, #667eea 0%, #5c4ba2 100%),
-      linear-gradient(0deg, #4eedf9, #4eedf9);
+    background: linear-gradient(180deg, #ff416c 0%, #ff4b2b 100%), #ffffff;
     color: #fff;
   }
 
