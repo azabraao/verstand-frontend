@@ -50,31 +50,43 @@ const Home = () => {
             </p>
           )}
 
-          <div className="Home__buttons">
-            <Button
-              onMouseOver={setDownloadAsMade}
-              theme="singer"
-              href="singer.json"
-              download="singer.json"
-            >
-              <span>Singer</span>
-            </Button>
-            <Button
-              onMouseOver={setDownloadAsMade}
-              theme="fighter"
-              href="fighter.json"
-              download="fighter.json"
-            >
-              <span>Fighter</span>
-            </Button>
-            <Button
-              onMouseOver={setDownloadAsMade}
-              theme="entrepreneur"
-              href="entrepreneur.json"
-              download="entrepreneur.json"
-            >
-              <span>entrepreneur</span>
-            </Button>
+          <div className="Home__sleeves">
+            <div className="Home__sleeve">
+              <article>
+                <p>Entrepreneur</p>
+              </article>
+              <Button
+                onMouseOver={setDownloadAsMade}
+                href="entrepreneur.json"
+                download="entrepreneur.json"
+              >
+                <span>Download</span>
+              </Button>
+            </div>
+            <div className="Home__sleeve">
+              <article>
+                <p>Singer</p>
+              </article>
+              <Button
+                onMouseOver={setDownloadAsMade}
+                href="singer.json"
+                download="singer.json"
+              >
+                <span>Download</span>
+              </Button>
+            </div>
+            <div className="Home__sleeve">
+              <article>
+                <p>Fighter</p>
+              </article>
+              <Button
+                onMouseOver={setDownloadAsMade}
+                href="fighter.json"
+                download="fighter.json"
+              >
+                <span>Download</span>
+              </Button>
+            </div>
           </div>
         </main>
         <footer className="Home__cta">

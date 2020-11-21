@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import iconJson from "../../assets/images/icon-json.svg";
 
 const HomeStyle = styled.section`
   min-height: 100vh;
@@ -8,7 +9,7 @@ const HomeStyle = styled.section`
   @media only screen and (min-width: 768px) {
     padding: 120px 0;
   }
-  
+
   background: rgb(0, 0, 0);
   background: radial-gradient(
     circle,
@@ -53,20 +54,56 @@ const HomeStyle = styled.section`
     margin-bottom: 24px;
   }
 
-  .Home__buttons {
+  .Home__sleeves {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
     margin: 0 auto;
 
-    button {
-      margin-bottom: 16px;
-    }
-
-    @media only screen and (min-width: 430px) {
+    @media only screen and (min-width: 768px) {
       flex-direction: row;
       justify-content: space-evenly;
+    }
+
+    .Home__sleeve {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 32px;
+
+      article {
+      min-width: 187px;
+        color: #7023f0;
+        margin-bottom: 16px;
+        background: #ffffff;
+        box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px;
+
+        &:before {
+          content: "";
+          display: block;
+          width: 60px;
+          height: 80px;
+          background-image: url(${iconJson});
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-bottom: 16px;
+        }
+
+        p {
+          font-family: Netron;
+          font-size: 16px;
+        }
+      }
+      button {
+      }
     }
   }
 
@@ -74,7 +111,6 @@ const HomeStyle = styled.section`
     margin-top: 80px;
     justify-content: center;
   }
-
 `;
 
 export default HomeStyle;
