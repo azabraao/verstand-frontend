@@ -45,7 +45,7 @@ const Home = () => {
 
           {madeDownload && (
             <p className="provocation" role="complementary">
-              Ask yourself: You will really be happier by just getting a new
+              Ask yourself: Will you really be happier by just getting a new
               body?
             </p>
           )}
