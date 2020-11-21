@@ -130,6 +130,7 @@ const NavbarStyle = styled.nav`
     color: #ffffff;
 
     h2 {
+      cursor: pointer;
       font-size: 18px;
     }
   }

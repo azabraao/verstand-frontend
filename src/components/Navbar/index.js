@@ -4,9 +4,11 @@ import NavbarStyle from "./styles";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
 import authService from "../../services/auth.service";
+import {useHistory} from "react-router-dom"
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const history = useHistory();
 
   const toggleMenu = () => setIsActive(!isActive);
 
@@ -65,7 +67,9 @@ const Navbar = () => {
         <span />
       </div>
       <div className="Navbar__logo">
-        <h2>Verstand</h2>
+        <h2 onClick={() => {
+          history.push("/")
+        }}>Verstand</h2>
       </div>
       <div className="Navbar__hamburguer-width"></div>
     </NavbarStyle>
