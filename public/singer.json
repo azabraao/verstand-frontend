@@ -1,25 +1,23 @@
 {
   "profile_kind": "singer",
-  "age": 27,
+  "age": 21,
   "image_path": "https://azabraao.files.wordpress.com/2020/11/singer.png",
   "physical_characteristic": "strong",
-  "description": "timbre baixo, nascido ashdals",
-  "tall": "1.80",
-  "personality": "extrovert",
-  "personal_skills": ["resilience", "responsability"],
-  "methodical_skills": [
-    "analytical",
-    "organizational",
-    "problem solving",
-    "emotional resistance"
+  "description": "You have all the characteristics of a successful singer, your talent will draw attention wherever you go and also your voice will enchant your audience, just dedicate yourself to have a successful career",
+  "tall": "1.62",
+  "personality": "extrovert, sympathetic, ",
+  "personal_skills": [
+    "resilience",
+    "responsability, emotional resistance communication capacity, vocal resistance"
   ],
+  "methodical_skills": ["analytical", "musicality", "problem solving"],
   "social_skills": ["empathy", "team player", "great interaction ability"],
   "dashboard": {
     "memory": 120,
-    "happiness": 80,
+    "happiness": 120,
     "reasoning": 79,
     "analysis": 50,
-    "intelligence": 100
+    "intelligence": 120
   },
-  "full_report": "https://gerenciamais.com.br/inc/thumb.php?end=../uploads/recursos__foto_4.jpg&largura=773"
+  "full_report": "http://verstand.netlify.app/singer.pdf"
 }

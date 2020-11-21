@@ -1,12 +1,15 @@
 {
   "profile_kind": "fighter",
-  "age": 27,
+  "age": 25,
   "image_path": "https://azabraao.files.wordpress.com/2020/11/fighter.png",
-  "physical_characteristic": "strong",
-  "description": "timbre baixo, nascido ashdals",
+  "physical_characteristic": "strong, agility, prodigy, feather weight",
+  "description": "You have all the characteristics of a successful fighter, your category is featherweight, agility, strength, endurance, and talent await you on your new journey.",
   "tall": "1.80",
-  "personality": "extrovert",
-  "personal_skills": ["resilience", "responsability"],
+  "personality": "Seriously",
+  "personal_skills": [
+    "emotional resistance, resilience",
+    "responsability, respect"
+  ],
   "methodical_skills": [
     "analytical",
     "organizational",
@@ -15,11 +18,11 @@
   ],
   "social_skills": ["empathy", "team player", "great interaction ability"],
   "dashboard": {
-    "memory": 120,
-    "happiness": 80,
-    "reasoning": 79,
-    "analysis": 50,
-    "intelligence": 100
+    "memory": 100,
+    "happiness": 120,
+    "reasoning": 56,
+    "analysis": 120,
+    "intelligence": 30
   },
   "full_report": "https://gerenciamais.com.br/inc/thumb.php?end=../uploads/recursos__foto_4.jpg&largura=773"
 }
